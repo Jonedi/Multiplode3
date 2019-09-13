@@ -36,8 +36,8 @@ function bootstrap_pagination( \WP_Query $wp_query = null, $echo = true ) {
 			'end_size'     => 3,
 			'mid_size'     => 1,
 			'prev_next'    => true,
-			'prev_text'    => __( '« Anterior' ),
-			'next_text'    => __( 'Siguiente »' ),
+			'prev_text'    => __( 'Â« Anterior' ),
+			'next_text'    => __( 'Siguiente Â»' ),
 			'add_args'     => false,
 			'add_fragment' => ''
 		]
