@@ -1,0 +1,48 @@
+<!--  ver info en https://github.com/techiediaries/angular-php-example -->
+
+<div class="container">
+    <h1 class="my-3">Datos Empleado</h1>
+
+    <table class="table mb-2">
+      <thead class="thead-dark text-center">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Género</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Sueldo</th>
+            <th scope="col">Contrato</th>
+            <th scope="col">Operaciones</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of persona" class="text-center">
+          <td scope="row">{{ person.id }}</td>
+          <td>{{ person.nombre }}</td>
+          <td>{{ person.genero }}</td>
+          <td>{{ person.edad }}</td>
+          <td>{{ person.sueldo }}</td>
+          <td>{{ person.contrato }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="selePersona(person)">Editar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <form class="form-group" #f="ngForm">
+      <div class="d-flex flex-column justify-content-center">
+        <label>Nombre: </label>
+        <input type="text" class="form-control mx-2" name="nombre" [(ngModel)] = "selecPerson.nombre">
+        <label>Género</label>
+        <input type="text" class="form-control mx-2" name="genero" [(ngModel)] = "selecPerson.genero">
+        <label>Edad: </label>
+        <input type="text" class="form-control mx-2" name="edad" [(ngModel)] = "selecPerson.edad">
+        <label>Sueldo</label>
+        <input type="text" class="form-control mx-2" name="sueldo" [(ngModel)]= "selecPerson.sueldo">
+        <label>Contrato</label>
+        <input type="text" class="form-control mx-2" name="contrato" [(ngModel)]= "selecPerson.contrato">
+      </div>
+        <input type="button" class="btn btn-success my-3" (click)="crearUpdateEmpleado(f)" value="Crear o Actualizar">
+      </form>
+  </div>
